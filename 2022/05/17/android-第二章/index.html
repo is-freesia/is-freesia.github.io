@@ -9,7 +9,7 @@
     
     <title>
         
-            Android 第一章 |
+            Android 第二章 |
         
         夏夜不息
     </title>
@@ -155,7 +155,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Android 第一章</span>
+            <span class="title-hover-animation">Android 第二章</span>
         </div>
 
         
@@ -174,8 +174,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-05-15 23:32:48</span>
-        <span class="mobile">2022-05-15 23:32</span>
+        <span class="pc">2022-05-17 17:27:43</span>
+        <span class="mobile">2022-05-17 17:27</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -205,7 +205,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>14 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>342 Words</span>
         </span>
     
     
@@ -218,18 +218,31 @@
         
 
         <div class="article-content markdown-body">
-            <h3 id="Android的安装"><a href="#Android的安装" class="headerlink" title="Android的安装"></a>Android的安装</h3><h3 id="Android项目的建立"><a href="#Android项目的建立" class="headerlink" title="Android项目的建立"></a>Android项目的建立</h3><h3 id="log日志的使用"><a href="#log日志的使用" class="headerlink" title="log日志的使用"></a>log日志的使用</h3>
+            <h2 id="基本活动"><a href="#基本活动" class="headerlink" title="基本活动"></a>基本活动</h2><h4 id="android-exported"><a href="#android-exported" class="headerlink" title="android:exported"></a>android:exported</h4><p><code> android:exported</code>是Android中的四大组件 Activity，Service，Provider，Receiver 四大组件中都会有的一个属性。</p>
+<ul>
+<li><p>Activity中</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;activity</span><br><span class="line">          ……</span><br><span class="line">          android:exported=[<span class="string">&quot;true&quot;</span> | <span class="string">&quot;false&quot;</span>]</span><br><span class="line">          ……</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在Activity中该属性用来标示：当前Activity是否可以被另一个Application的组件启动：true允许被启动；false不允许被启动。</p>
+<p>如果被设置为了false，那么这个Activity将只会被当前Application或者拥有同样user ID的Application的组件调用。</p>
+<p>exported 的默认值根据Activity中是否有intent filter 来定。没有任何的filter意味着这个Activity只有在详细的描述了他的class name后才能被唤醒 .这意味着这个Activity只能在应用内部使用，因为其它application并不知道这个class的存在。所以在这种情况下，它的默认值是false。从另一方面讲，如果Activity里面至少有一个filter的话，意味着这个Activity可以被其它应用从外部唤起，这个时候它的默认值是true。</p>
+</li>
+</ul>
+<h4 id="在活动中使用Toast"><a href="#在活动中使用Toast" class="headerlink" title="在活动中使用Toast"></a>在活动中使用Toast</h4><p>Toast提醒，将短小的信息通知给用户，这些信息会在一段时间后自动消失，并且不会占用任何屏幕空间</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Button</span> <span class="variable">button1</span> <span class="operator">=</span> (Button) findViewById(R.id.button_1);</span><br><span class="line">button1.setOnClickListener(<span class="keyword">new</span> <span class="title class_">View</span>.OnClickListener() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onClick</span><span class="params">(View view)</span> &#123;</span><br><span class="line">        Toast.makeText(FirstActivity.<span class="built_in">this</span>,<span class="string">&quot;You clicked Button 1&quot;</span>,Toast.LENGTH_SHORT).show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="在活动中使用Menu"><a href="#在活动中使用Menu" class="headerlink" title="在活动中使用Menu"></a>在活动中使用Menu</h4>
         </div>
 
         
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：Android 第一章</li>
+        <li>Post title：Android 第二章</li>
         <li>Post author：Weensssqian</li>
-        <li>Create time：2022-05-15 23:32:48</li>
+        <li>Create time：2022-05-17 17:27:43</li>
         <li>
-            Post link：https://is-freesia.github.io/2022/05/15/android-第一章/
+            Post link：https://is-freesia.github.io/2022/05/17/android-第二章/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -256,13 +269,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2022/05/17/android-%E7%AC%AC%E4%BA%8C%E7%AB%A0/"
+                           href="/2022/05/18/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AD%A6%E4%B9%A0/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Android 第二章</span>
+                                <span class="post-nav-title-item">信息安全</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -272,10 +285,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/05/10/hello-world/"
+                           href="/2022/05/15/android-%E7%AC%AC%E4%B8%80%E7%AB%A0/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Hello World</span>
+                                <span class="post-nav-title-item">Android 第一章</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -395,7 +408,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Android%E7%9A%84%E5%AE%89%E8%A3%85"><span class="nav-text">Android的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%BB%BA%E7%AB%8B"><span class="nav-text">Android项目的建立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#log%E6%97%A5%E5%BF%97%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">log日志的使用</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%B4%BB%E5%8A%A8"><span class="nav-text">基本活动</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#android-exported"><span class="nav-text">android:exported</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E6%B4%BB%E5%8A%A8%E4%B8%AD%E4%BD%BF%E7%94%A8Toast"><span class="nav-text">在活动中使用Toast</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E6%B4%BB%E5%8A%A8%E4%B8%AD%E4%BD%BF%E7%94%A8Menu"><span class="nav-text">在活动中使用Menu</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
