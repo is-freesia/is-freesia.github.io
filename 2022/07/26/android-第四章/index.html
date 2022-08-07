@@ -205,7 +205,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>1.9k Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.1k Words</span>
         </span>
     
     
@@ -362,6 +362,18 @@
 <td>和标准屏幕配置一样的屏幕宽高比</td>
 </tr>
 </tbody></table>
+<h2 id="3、FragmentManager"><a href="#3、FragmentManager" class="headerlink" title="3、FragmentManager"></a>3、FragmentManager</h2><p>从字面意思来看, FragmentManager 就是 Fragment 的管理类, 点开源码可以看到也确实是这样, Fragment 的生命周期就是通过 FragmentManager 来管理的. </p>
+<p>查看源码可以看到 FragmentManager是一个抽象类, 它的实现类是 FragmentManagerImpl 类。</p>
+<h3 id="和Activity的关联关系"><a href="#和Activity的关联关系" class="headerlink" title="和Activity的关联关系"></a>和Activity的关联关系</h3><p>在 FragmentActivity 内部有这样一行代码:</p>
+<p><code>final FragmentController mFragments = FragmentController.createController(new HostCallbacks());</code></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.staticaly.com/gh/is-freesia/image-hosting@main/2022/7/28/fragment%E4%B8%8Eactivity.4x9208teff8.webp"
+                      alt="fragment与activity"
+                ></p>
+<p>并且我们也可以得出这样的结论:</p>
+<p><code>一个 Activity 只对应一个 FragmentManager 对象</code></p>
 
         </div>
 
@@ -396,6 +408,21 @@
 
         
             <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/08/02/Fragemnt/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Fragment的跳转 碎片</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
                     <div class="article-next">
@@ -524,7 +551,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E7%A2%8E%E7%89%87%EF%BC%88Fragment%EF%BC%89"><span class="nav-text">1、碎片（Fragment）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A2%8E%E7%89%87%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-text">碎片的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%93%E9%AA%8C%E7%A2%8E%E7%89%87%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-text">体验碎片的生命周期</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A2%8E%E7%89%87%E7%B1%BB%E5%9E%8B"><span class="nav-text">碎片类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E5%B8%83%E5%B1%80%E7%9A%84%E6%8A%80%E5%B7%A7"><span class="nav-text">2、动态加载布局的技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%90%E5%AE%9A%E7%AC%A6%EF%BC%88Qualofiers%EF%BC%89"><span class="nav-text">限定符（Qualofiers）</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E7%A2%8E%E7%89%87%EF%BC%88Fragment%EF%BC%89"><span class="nav-text">1、碎片（Fragment）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A2%8E%E7%89%87%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-text">碎片的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%93%E9%AA%8C%E7%A2%8E%E7%89%87%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-text">体验碎片的生命周期</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A2%8E%E7%89%87%E7%B1%BB%E5%9E%8B"><span class="nav-text">碎片类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E5%B8%83%E5%B1%80%E7%9A%84%E6%8A%80%E5%B7%A7"><span class="nav-text">2、动态加载布局的技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%90%E5%AE%9A%E7%AC%A6%EF%BC%88Qualofiers%EF%BC%89"><span class="nav-text">限定符（Qualofiers）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81FragmentManager"><span class="nav-text">3、FragmentManager</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%92%8CActivity%E7%9A%84%E5%85%B3%E8%81%94%E5%85%B3%E7%B3%BB"><span class="nav-text">和Activity的关联关系</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
